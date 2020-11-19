@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking Textarea</title>
+</head>
+<body onload="window.addEventListener('keydown', play);">
+<textarea type="texta" id="demo" style="width: 400px; height: 200px"
+          disabled></textarea>
+</body>
+<script>
+    let array = ['T', 'O', 'I', ' ', 'L', 'A', ' ', 'M', 'O', 'T', ' ', 'D', 'U', 'A', ' ',
+        'N', 'G', 'O', 'C', '!', '!'];
+    let str = '';
+    let count = 0;
+    function play(evt) {
+
+        if (evt.keyCode != 0) {
+            if (count >= array.length) {
+                str = '';
+                count = 0;
+            }
+            str += array[count];
+            count++
+            document.getElementById("demo").value = str;
+        }
+    }
+</script>
+</html>
